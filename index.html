@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <h1>This domain is for sale!</h1>
+      <h1><span class="domain-name">This domain</span> is for sale!</h1>
       Please email
       <code>
         <a href="mailto:contact@itsmaxymoo.com">contact@itsmaxymoo.com</a>
@@ -17,3 +17,12 @@
     </main>
   </body>
 </html>
+
+<script type="text/javascript>
+
+document.body.onload = function(){
+  const domain = new URL(location.href).searchParams.get('domain');
+  document.querySelector('#domain-name').innerText = domain;
+}
+
+</script>
