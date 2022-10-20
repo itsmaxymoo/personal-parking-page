@@ -1,28 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="pico.classless.min.css">
-    <title>This Domain is For Sale!</title>
-  </head>
-  <body>
-    <main>
-      <h1><span class="domain-name">This domain</span> is for sale!</h1>
-      Please email
-      <code>
-        <a href="mailto:contact@itsmaxymoo.com">contact@itsmaxymoo.com</a>
-      </code>
-      if you are interested!
-    </main>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="pico.classless.min.css">
+		<title>This Domain is For Sale!</title>
+	</head>
+	<body>
+		<main>
+			<h1><span class="domain-name">This domain</span> is for sale!</h1>
+			Please email
+			<code>
+				<a href="mailto:contact@itsmaxymoo.com?subject=Interested in a domain." class="mailto-link">contact@itsmaxymoo.com</a>
+			</code>
+			if you are interested!
+		</main>
+	</body>
 </html>
 
-<script type="text/javascript>
+<script type="text/javascript">
 
 document.body.onload = function(){
-  const domain = new URL(location.href).searchParams.get('domain');
-  document.querySelector('#domain-name').innerText = domain;
-}
+	const domain = new URL(location.href).searchParams.get('domain');
+	document.querySelector('.domain-name').innerText = domain;
+	document.querySelector('.mailto-link').setAttribute('href', 'mailto:contact@itsmaxymoo.com?subject=Interested in ' + domain);
+};
 
 </script>
